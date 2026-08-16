@@ -1,712 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechZentra | IT Training, Cloud, DevOps & Cyber Security</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;color:#07183d;background:#f5f9ff}
-a{text-decoration:none;color:inherit}
+    <title>TechZentra | IT Training & Solutions</title>
 
-header{
-    height:78px;background:#fff;display:flex;align-items:center;
-    justify-content:space-between;padding:0 4.5%;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-    position:sticky;top:0;z-index:1000
-}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{font-size:40px;color:#087ff5}
-.logo-text{font-size:29px;font-weight:700}
-.logo-text span{color:#087ff5}
-.tagline{font-size:12px;color:#64748b;margin-top:-3px}
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-nav{display:flex;align-items:center;gap:24px}
-nav a{font-size:14px;font-weight:600;color:#101c39;transition:.3s}
-nav a:hover{color:#087ff5}
-.nav-btn{
-    background:#087ff5!important;color:#fff!important;
-    padding:12px 18px;border-radius:7px
-}
-
-/* HERO */
-.hero{
-    min-height:530px;
-    background:
-    radial-gradient(circle at 78% 45%,rgba(0,126,255,.22),transparent 30%),
-    linear-gradient(115deg,#020a24,#031235 55%,#001b45);
-    color:#fff;display:flex;align-items:center;
-    padding:60px 5%;overflow:hidden
-}
-.hero-container{
-    width:100%;max-width:1400px;margin:auto;
-    display:flex;align-items:center;
-    justify-content:space-between;gap:45px
-}
-.hero-content{width:52%}
-.hero-badge{
-    display:inline-block;background:rgba(0,132,255,.2);
-    border:1px solid rgba(0,150,255,.35);color:#19a5ff;
-    padding:8px 15px;border-radius:20px;
-    font-size:13px;font-weight:bold;margin-bottom:18px
-}
-.hero h1{font-size:48px;line-height:1.12;margin-bottom:20px}
-.hero h1 span{color:#0b91ff}
-.hero p{
-    font-size:17px;line-height:1.7;color:#d6e3f5;
-    max-width:650px;margin-bottom:30px
-}
-.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{
-    background:#087ff5;color:#fff;padding:15px 24px;
-    border-radius:6px;font-weight:bold;display:inline-block
-}
-.btn-outline{
-    border:1px solid #d7e6f8;color:#fff;padding:14px 24px;
-    border-radius:6px;font-weight:bold;display:inline-block
-}
-.btn-whatsapp{
-    background:#20b858;color:#fff;padding:15px 24px;
-    border-radius:6px;font-weight:bold
-}
-
-/* HERO TECHNOLOGIES */
-.hero-visual{
-    width:43%;display:grid;
-    grid-template-columns:repeat(3,1fr);gap:14px
-}
-.hero-tech{
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:14px;padding:20px 10px;
-    text-align:center;backdrop-filter:blur(8px);
-    transition:.3s
-}
-.hero-tech:hover{
-    transform:translateY(-5px);
-    background:rgba(255,255,255,.13)
-}
-.hero-tech img{
-    width:48px;height:48px;object-fit:contain;margin-bottom:9px
-}
-.hero-tech span{display:block;font-weight:bold;font-size:13px}
-
-/* FEATURES */
-.features{
-    background:#fff;padding:25px 5%;
-    display:grid;grid-template-columns:repeat(5,1fr);
-    gap:20px;box-shadow:0 2px 15px rgba(0,0,0,.05)
-}
-.feature{
-    display:flex;gap:14px;align-items:center;
-    padding:10px;border-right:1px solid #e1e7ef
-}
-.feature:last-child{border-right:none}
-.feature-icon{
-    width:50px;height:50px;background:#e9f4ff;
-    border-radius:50%;display:flex;
-    justify-content:center;align-items:center;
-    font-size:24px;color:#087ff5;flex-shrink:0
-}
-.feature h3{font-size:15px;margin-bottom:5px}
-.feature p{color:#64748b;font-size:13px;line-height:1.4}
-
-/* COURSES */
-.courses{
-    padding:60px 5%;max-width:1500px;margin:auto
-}
-.section-header{
-    display:flex;justify-content:space-between;
-    align-items:center;margin-bottom:28px
-}
-.section-header h2{font-size:30px}
-.section-header p{color:#64748b;margin-top:7px}
-.view-all{color:#087ff5;font-weight:bold}
-
-.course-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:22px
-}
-.course-card{
-    background:#fff;border-radius:12px;overflow:hidden;
-    border:1px solid #dce5ef;transition:.3s
-}
-.course-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,50,100,.12)
-}
-.course-image{
-    height:155px;display:flex;
-    align-items:center;justify-content:center;
-    position:relative;overflow:hidden
-}
-.course-image img{
-    width:82px;height:82px;object-fit:contain;
-    filter:drop-shadow(0 5px 12px rgba(0,0,0,.18))
-}
-.course-image .label{
-    position:absolute;bottom:12px;left:15px;
-    color:#fff;font-weight:700;font-size:18px;
-    text-shadow:0 2px 5px rgba(0,0,0,.35)
-}
-
-.aws-bg{background:linear-gradient(135deg,#111827,#020617)}
-.azure-bg{background:linear-gradient(135deg,#0078d4,#003b70)}
-.java-bg{background:linear-gradient(135deg,#e76f00,#8f1d14)}
-.python-bg{background:linear-gradient(135deg,#3776ab,#ffd343)}
-.cyber-bg{background:linear-gradient(135deg,#182848,#4b6cb7)}
-.linux-bg{background:linear-gradient(135deg,#222,#555)}
-.network-bg{background:linear-gradient(135deg,#0f4c81,#172554)}
-.devops-bg{background:linear-gradient(135deg,#073b66,#102d58)}
-
-.course-content{padding:18px}
-.course-content h3{font-size:18px;margin-bottom:9px}
-.course-content p{
-    color:#596579;font-size:13px;
-    line-height:1.55;min-height:60px
-}
-.course-link{
-    display:inline-block;color:#087ff5;
-    font-size:14px;font-weight:bold;margin-top:12px
-}
-
-/* STATS */
-.stats{
-    background:#020d2b;color:#fff;padding:38px 5%
-}
-.stats-container{
-    max-width:1400px;margin:auto;
-    display:grid;grid-template-columns:repeat(4,1fr) 1.5fr;
-    align-items:center;gap:20px
-}
-.stat{
-    display:flex;align-items:center;gap:15px;
-    border-right:1px solid rgba(255,255,255,.2);
-    padding:10px 20px
-}
-.stat-icon{font-size:32px;color:#087ff5}
-.stat strong{font-size:28px;display:block}
-.stat span{color:#c4d0e4;font-size:13px}
-
-.cta{
-    border:1px solid rgba(255,255,255,.2);
-    padding:20px;border-radius:10px
-}
-.cta h3{margin-bottom:7px}
-.cta p{font-size:13px;color:#cbd5e1;margin-bottom:13px}
-
-/* FOOTER */
-footer{
-    background:#01091d;color:#aebbd0;
-    padding:40px 5%;text-align:center
-}
-.brand{
-    font-size:24px;color:#fff;font-weight:bold;
-    margin-bottom:10px
-}
-.brand span{color:#087ff5}
-footer p{font-size:13px}
-
-/* RESPONSIVE */
-@media(max-width:1100px){
-    nav{gap:12px}
-    .hero h1{font-size:40px}
-    .course-grid{grid-template-columns:repeat(2,1fr)}
-    .features{grid-template-columns:repeat(3,1fr)}
-    .stats-container{grid-template-columns:repeat(2,1fr)}
-}
-
-@media(max-width:800px){
-    header{
-        height:auto;padding:15px 5%;
-        flex-direction:column;gap:15px
-    }
-
-    nav{
-        flex-wrap:wrap;
-        justify-content:center
-    }
-
-    .hero-container{flex-direction:column}
-    .hero-content,.hero-visual{width:100%}
-    .hero h1{font-size:36px}
-    .hero-visual{grid-template-columns:repeat(2,1fr)}
-
-    .features{grid-template-columns:1fr}
-    .feature{
-        border-right:none;
-        border-bottom:1px solid #e1e7ef
-    }
-
-    .course-grid{grid-template-columns:1fr}
-    .stats-container{grid-template-columns:1fr}
-
-    .stat{
-        border-right:none;
-        border-bottom:1px solid rgba(255,255,255,.15)
-    }
-}
-</style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header>
+<!-- ================= NAVBAR ================= -->
 
-<div class="logo">
-    <div class="logo-icon">☁</div>
+<header class="header">
 
-    <div>
-        <div class="logo-text">
-            Tech<span>Zentra</span>
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fas fa-cloud"></i>
         </div>
 
-        <div class="tagline">
-            Learn | Implement | Grow
+        <div>
+            <div class="logo-text">
+                Tech<span>Zentra</span>
+            </div>
+
+            <div class="tagline">
+                Learn | Implement | Grow
+            </div>
         </div>
     </div>
-</div>
 
-<nav>
-    <a href="#" class="active">Home</a>
-    <a href="#courses">Courses</a>
-    <a href="#about">About Us</a>
-    <a href="#services">IT Services</a>
-    <a href="#corporate">Corporate Training</a>
-    <a href="#contact">Contact</a>
+    <button class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
 
-    <a href="#register" class="nav-btn">
-        Register Now →
-    </a>
-</nav>
+    <nav id="mainNav">
+
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About Us</a>
+        <a href="#services">IT Services</a>
+        <a href="#corporate">Corporate Training</a>
+        <a href="#contact">Contact</a>
+
+        <a href="#register" class="nav-btn">
+            Register Now
+        </a>
+
+    </nav>
 
 </header>
 
 
-<!-- HERO -->
-<section class="hero">
+<!-- ================= HERO ================= -->
 
-<div class="hero-container">
+<section class="hero" id="home">
 
-<div class="hero-content">
+    <div class="hero-container">
 
-<div class="hero-badge">
-    IT TRAINING • CLOUD • DEVOPS • SECURITY
-</div>
+        <div class="hero-content">
 
-<h1>
-    Build Skills.<br>
-    <span>Build Your Career.</span>
-</h1>
+            <div class="hero-badge">
+                IT TRAINING • CLOUD • DEVOPS • SECURITY
+            </div>
 
-<p>
-    TechZentra delivers practical, industry-focused training in
-    Cloud, DevOps, Programming, Cyber Security, Linux and Networking.
-    Learn from experienced trainers through hands-on labs,
-    real-time projects and career-focused guidance.
-</p>
+            <h1>
+                Build Skills.<br>
+                <span>Build Your Career.</span>
+            </h1>
 
-<div class="hero-buttons">
+            <p>
+                TechZentra provides practical, industry-focused training
+                in Cloud, DevOps, Programming, Cyber Security, Linux and
+                Networking. Learn through hands-on labs, real-time projects
+                and career-focused training.
+            </p>
 
-<a href="#courses" class="btn-primary">
-    Explore Courses →
-</a>
+            <div class="hero-buttons">
 
-<a href="#register" class="btn-outline">
-    Register Now →
-</a>
+                <a href="#courses" class="btn btn-primary">
+                    Explore Courses
+                    <i class="fas fa-arrow-right"></i>
+                </a>
 
-<a href="https://wa.me/919848846685"
-   class="btn-whatsapp"
-   target="_blank">
-    WhatsApp Us
-</a>
+                <a href="#register" class="btn btn-outline">
+                    Register Now
+                </a>
 
-</div>
+                <a href="https://wa.me/919848846685"
+                   target="_blank"
+                   class="btn btn-whatsapp">
 
-</div>
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Us
+
+                </a>
+
+            </div>
+
+        </div>
 
 
-<!-- TECHNOLOGIES -->
-<div class="hero-visual">
+        <!-- TECHNOLOGIES -->
 
-<div class="hero-tech">
-<img src="https://cdn.simpleicons.org/amazonaws/white" alt="AWS">
-<span>AWS</span>
-</div>
+        <div class="technology-box">
 
-<div class="hero-tech">
-<img src="https://cdn.simpleicons.org/microsoftazure/white" alt="Azure">
-<span>Azure</span>
-</div>
+            <div class="technology-card">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+            </div>
 
-<div class="hero-tech">
-<img src="https://cdn.simpleicons.org/openjdk/white" alt="Java">
-<span>Java</span>
-</div>
+            <div class="technology-card">
+                <i class="fab fa-microsoft"></i>
+                <span>Azure</span>
+            </div>
 
-<div class="hero-tech">
-<img src="https://cdn.simpleicons.org/python/white" alt="Python">
-<span>Python</span>
-</div>
+            <div class="technology-card">
+                <i class="fab fa-java"></i>
+                <span>Java</span>
+            </div>
 
-<div class="hero-tech">
-<img src="https://cdn.simpleicons.org/linux/white" alt="Linux">
-<span>Linux</span>
-</div>
+            <div class="technology-card">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+            </div>
 
-<div class="hero-tech">
-<img src="https://cdn.simpleicons.org/cisco/white" alt="Networking">
-<span>Networking</span>
-</div>
+            <div class="technology-card">
+                <i class="fab fa-linux"></i>
+                <span>Linux</span>
+            </div>
 
-</div>
+            <div class="technology-card">
+                <i class="fas fa-network-wired"></i>
+                <span>Networking</span>
+            </div>
 
-</div>
+            <div class="technology-card">
+                <i class="fas fa-shield-halved"></i>
+                <span>Cyber Security</span>
+            </div>
+
+            <div class="technology-card">
+                <i class="fas fa-gears"></i>
+                <span>DevOps</span>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
+
 <section class="features">
 
-<div class="feature">
-<div class="feature-icon">🎓</div>
-<div>
-<h3>Expert Trainers</h3>
-<p>Experienced industry trainers</p>
-</div>
-</div>
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fas fa-user-tie"></i>
+        </div>
 
-<div class="feature">
-<div class="feature-icon">🧪</div>
-<div>
-<h3>Hands-on Labs</h3>
-<p>Practical learning & projects</p>
-</div>
-</div>
+        <div>
+            <h3>Expert Trainers</h3>
+            <p>Experienced industry trainers</p>
+        </div>
+    </div>
 
-<div class="feature">
-<div class="feature-icon">💻</div>
-<div>
-<h3>Real-time Projects</h3>
-<p>Build job-ready skills</p>
-</div>
-</div>
 
-<div class="feature">
-<div class="feature-icon">📜</div>
-<div>
-<h3>Certification Support</h3>
-<p>Guidance for major certifications</p>
-</div>
-</div>
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fas fa-flask"></i>
+        </div>
 
-<div class="feature">
-<div class="feature-icon">🏢</div>
-<div>
-<h3>Corporate Training</h3>
-<p>Customized team programs</p>
-</div>
-</div>
+        <div>
+            <h3>Hands-on Labs</h3>
+            <p>Practical learning & projects</p>
+        </div>
+    </div>
+
+
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fas fa-laptop-code"></i>
+        </div>
+
+        <div>
+            <h3>Real-time Projects</h3>
+            <p>Build job-ready skills</p>
+        </div>
+    </div>
+
+
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fas fa-certificate"></i>
+        </div>
+
+        <div>
+            <h3>Certification Support</h3>
+            <p>Certification guidance</p>
+        </div>
+    </div>
+
+
+    <div class="feature">
+        <div class="feature-icon">
+            <i class="fas fa-building"></i>
+        </div>
+
+        <div>
+            <h3>Corporate Training</h3>
+            <p>Customized team programs</p>
+        </div>
+    </div>
 
 </section>
 
 
-<!-- COURSES -->
+<!-- ================= COURSES ================= -->
+
 <section class="courses" id="courses">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div>
-<h2>Popular Training Programs</h2>
-<p>Learn the technologies companies use today.</p>
-</div>
+        <div>
+            <h2>Popular Training Programs</h2>
 
-<a href="#register" class="view-all">
-Register →
-</a>
+            <p>
+                Learn the technologies companies use today.
+            </p>
+        </div>
 
-</div>
+        <a href="#register" class="view-all">
+            Register Now →
+        </a>
 
-
-<div class="course-grid">
-
-
-<!-- AWS -->
-<div class="course-card">
-
-<div class="course-image aws-bg">
-<img src="https://cdn.simpleicons.org/amazonaws/white" alt="AWS">
-<div class="label">AWS</div>
-</div>
-
-<div class="course-content">
-<h3>AWS Cloud & Solutions Architect</h3>
-
-<p>
-Learn AWS services, architecture, security,
-networking and real-time cloud projects.
-</p>
-
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
-
-</div>
+    </div>
 
 
-<!-- AZURE -->
-<div class="course-card">
-
-<div class="course-image azure-bg">
-<img src="https://cdn.simpleicons.org/microsoftazure/white" alt="Azure">
-<div class="label">AZURE</div>
-</div>
-
-<div class="course-content">
-<h3>Microsoft Azure</h3>
-
-<p>
-Build and manage cloud solutions with Azure
-services, administration and architecture.
-</p>
-
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
-
-</div>
+    <div class="course-grid">
 
 
-<!-- JAVA -->
-<div class="course-card">
+        <!-- AWS -->
 
-<div class="course-image java-bg">
-<img src="https://cdn.simpleicons.org/openjdk/white" alt="Java">
-<div class="label">JAVA</div>
-</div>
+        <div class="course-card">
 
-<div class="course-content">
-<h3>Java Programming</h3>
+            <div class="course-image aws">
 
-<p>
-Core Java, OOP, collections, exception handling
-and application development fundamentals.
-</p>
+                <i class="fab fa-aws"></i>
 
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
+                <span>AWS</span>
 
-</div>
+            </div>
 
+            <div class="course-content">
 
-<!-- PYTHON -->
-<div class="course-card">
+                <h3>AWS Cloud & Solutions Architect</h3>
 
-<div class="course-image python-bg">
-<img src="https://cdn.simpleicons.org/python/white" alt="Python">
-<div class="label">PYTHON</div>
-</div>
+                <p>
+                    Learn AWS services, architecture, security,
+                    networking and real-time cloud projects.
+                </p>
 
-<div class="course-content">
-<h3>Python Programming</h3>
+                <a href="#register">
+                    Join Course →
+                </a>
 
-<p>
-Learn Python from fundamentals to automation,
-scripting, APIs and project-based development.
-</p>
+            </div>
 
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
-
-</div>
+        </div>
 
 
-<!-- CYBER SECURITY -->
-<div class="course-card">
+        <!-- AZURE -->
 
-<div class="course-image cyber-bg">
-<img src="https://cdn.simpleicons.org/kalilinux/white" alt="Cyber Security">
-<div class="label">CYBER SECURITY</div>
-</div>
+        <div class="course-card">
 
-<div class="course-content">
-<h3>Cyber Security</h3>
+            <div class="course-image azure">
 
-<p>
-Security fundamentals, Linux security, networking,
-ethical hacking concepts and practical labs.
-</p>
+                <i class="fab fa-microsoft"></i>
 
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
+                <span>AZURE</span>
 
-</div>
+            </div>
 
+            <div class="course-content">
 
-<!-- LINUX -->
-<div class="course-card">
+                <h3>Microsoft Azure</h3>
 
-<div class="course-image linux-bg">
-<img src="https://cdn.simpleicons.org/linux/white" alt="Linux">
-<div class="label">LINUX</div>
-</div>
+                <p>
+                    Learn Azure cloud services, administration,
+                    networking, security and architecture.
+                </p>
 
-<div class="course-content">
-<h3>Linux Administration</h3>
+                <a href="#register">
+                    Join Course →
+                </a>
 
-<p>
-Master Linux commands, users, permissions,
-processes, services, networking and troubleshooting.
-</p>
+            </div>
 
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
-
-</div>
+        </div>
 
 
-<!-- NETWORKING -->
-<div class="course-card">
+        <!-- JAVA -->
 
-<div class="course-image network-bg">
-<img src="https://cdn.simpleicons.org/cisco/white" alt="Networking">
-<div class="label">NETWORKING</div>
-</div>
+        <div class="course-card">
 
-<div class="course-content">
-<h3>Computer Networking</h3>
+            <div class="course-image java">
 
-<p>
-Learn TCP/IP, OSI, routing, switching, DNS,
-DHCP, troubleshooting and cloud networking.
-</p>
+                <i class="fab fa-java"></i>
 
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
+                <span>JAVA</span>
 
-</div>
+            </div>
+
+            <div class="course-content">
+
+                <h3>Java Programming</h3>
+
+                <p>
+                    Learn Core Java, OOP, collections,
+                    exception handling and application development.
+                </p>
+
+                <a href="#register">
+                    Join Course →
+                </a>
+
+            </div>
+
+        </div>
 
 
-<!-- DEVOPS -->
-<div class="course-card">
+        <!-- PYTHON -->
 
-<div class="course-image devops-bg">
-<img src="https://cdn.simpleicons.org/docker/white" alt="DevOps">
-<div class="label">DEVOPS</div>
-</div>
+        <div class="course-card">
 
-<div class="course-content">
-<h3>DevOps Engineering</h3>
+            <div class="course-image python">
 
-<p>
-Git, Jenkins, Docker, Kubernetes, CI/CD,
-Terraform and practical DevOps projects.
-</p>
+                <i class="fab fa-python"></i>
 
-<a href="#register" class="course-link">
-Join Course →
-</a>
-</div>
+                <span>PYTHON</span>
 
-</div>
+            </div>
 
-</div>
+            <div class="course-content">
+
+                <h3>Python Programming</h3>
+
+                <p>
+                    Learn Python fundamentals, automation,
+                    scripting, APIs and real-time projects.
+                </p>
+
+                <a href="#register">
+                    Join Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CYBER SECURITY -->
+
+        <div class="course-card">
+
+            <div class="course-image cyber">
+
+                <i class="fas fa-shield-halved"></i>
+
+                <span>CYBER SECURITY</span>
+
+            </div>
+
+            <div class="course-content">
+
+                <h3>Cyber Security</h3>
+
+                <p>
+                    Learn security fundamentals, networking,
+                    Linux security and ethical hacking concepts.
+                </p>
+
+                <a href="#register">
+                    Join Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LINUX -->
+
+        <div class="course-card">
+
+            <div class="course-image linux">
+
+                <i class="fab fa-linux"></i>
+
+                <span>LINUX</span>
+
+            </div>
+
+            <div class="course-content">
+
+                <h3>Linux Administration</h3>
+
+                <p>
+                    Linux commands, users, permissions,
+                    processes, services and troubleshooting.
+                </p>
+
+                <a href="#register">
+                    Join Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- NETWORKING -->
+
+        <div class="course-card">
+
+            <div class="course-image networking">
+
+                <i class="fas fa-network-wired"></i>
+
+                <span>NETWORKING</span>
+
+            </div>
+
+            <div class="course-content">
+
+                <h3>Computer Networking</h3>
+
+                <p>
+                    TCP/IP, OSI model, routing, switching,
+                    DNS, DHCP and network troubleshooting.
+                </p>
+
+                <a href="#register">
+                    Join Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DEVOPS -->
+
+        <div class="course-card">
+
+            <div class="course-image devops">
+
+                <i class="fas fa-gears"></i>
+
+                <span>DEVOPS</span>
+
+            </div>
+
+            <div class="course-content">
+
+                <h3>DevOps Engineering</h3>
+
+                <p>
+                    Git, Jenkins, Docker, Kubernetes,
+                    CI/CD, Terraform and real-time projects.
+                </p>
+
+                <a href="#register">
+                    Join Course →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<!-- STATS -->
-<section class="stats" id="about">
+<!-- ================= ABOUT ================= -->
 
-<div class="stats-container">
+<section class="about" id="about">
 
-<div class="stat">
-<div class="stat-icon">👥</div>
-<div>
-<strong>1000+</strong>
-<span>Learners Trained</span>
-</div>
-</div>
+    <div class="about-content">
 
-<div class="stat">
-<div class="stat-icon">📚</div>
-<div>
-<strong>8+</strong>
-<span>Core Programs</span>
-</div>
-</div>
+        <div class="section-badge">
+            ABOUT TECHZENTRA
+        </div>
 
-<div class="stat">
-<div class="stat-icon">🏢</div>
-<div>
-<strong>100+</strong>
-<span>Corporate Sessions</span>
-</div>
-</div>
+        <h2>
+            Learn Today. <span>Lead Tomorrow.</span>
+        </h2>
 
-<div class="stat">
-<div class="stat-icon">🧪</div>
-<div>
-<strong>100%</strong>
-<span>Practical Focus</span>
-</div>
-</div>
+        <p>
+            TechZentra is focused on delivering practical IT training
+            that helps students, professionals and organizations build
+            real-world technology skills.
+        </p>
 
-<div class="cta" id="register">
+        <p>
+            Our programs focus on hands-on learning, projects,
+            troubleshooting and industry-relevant technologies.
+        </p>
 
-<h3>Ready to start learning?</h3>
+        <a href="#contact" class="btn btn-primary">
+            Contact Us
+        </a>
 
-<p>
-Choose your technology and begin your journey with TechZentra.
-</p>
+    </div>
 
-<a href="https://wa.me/919848846685"
-   class="btn-whatsapp"
-   target="_blank">
-Register via WhatsApp →
-</a>
-
-</div>
-
-</div>
 </section>
 
 
-<!-- FOOTER -->
-<footer id="contact">
+<!-- ================= SERVICES ================= -->
 
-<div class="brand">
-Tech<span>Zentra</span>
-</div>
+<section class="services" id="services">
 
-<p>
-Java • Python • Cyber Security • AWS • Azure • Linux • Networking • DevOps
-</p>
+    <div class="section-title">
 
-<p style="margin-top:12px;">
-📞 Contact: +91 9848846685
-&nbsp; | &nbsp;
-💬 WhatsApp: +91 9848846685
-</p>
+        <h2>Our IT Services</h2>
 
-<p style="margin-top:12px;">
-© 2026 TechZentra. All Rights Reserved.
-</p>
+        <p>
+            Technology solutions for individuals and businesses.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Solutions</h3>
+            <p>
+                AWS and Azure cloud implementation,
+                migration and support.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <i class="fas fa-code"></i>
+            <h3>Application Development</h3>
+            <p>
+                Java, Python and web application
+                development solutions.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Cyber Security</h3>
+            <p>
+                Security awareness, assessments and
+                practical security solutions.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <i class="fas fa-server"></i>
+            <h3>IT Infrastructure</h3>
+            <p>
+                Linux, networking and infrastructure
+                management support.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <i class="fas fa-users"></i>
+        <div>
+            <strong>1000+</strong>
+            <span>Learners Trained</span>
+        </div>
+    </div>
+
+
+    <div class="stat">
+        <i class="fas fa-book-open"></i>
+        <div>
+            <strong>8+</strong>
+            <span>Core Programs</span>
+        </div>
+    </div>
+
+
+    <div class="stat">
+        <i class="fas fa-building"></i>
+        <div>
+            <strong>100+</strong>
+            <span>Corporate Sessions</span>
+        </div>
+    </div>
+
+
+    <div class="stat">
+        <i class="fas fa-laptop-code"></i>
+        <div>
+            <strong>100%</strong>
+            <span>Practical Focus</span>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section class="register" id="register">
+
+    <div>
+
+        <h2>
+            Ready to Start Your IT Journey?
+        </h2>
+
+        <p>
+            Choose your technology and contact us today.
+        </p>
+
+    </div>
+
+    <a href="https://wa.me/919848846685"
+       target="_blank"
+       class="btn btn-whatsapp">
+
+        <i class="fab fa-whatsapp"></i>
+        Register via WhatsApp
+
+    </a>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact TechZentra</h2>
+
+        <p>
+            Have questions about our courses or services?
+            Get in touch with us.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <i class="fas fa-phone"></i>
+
+            <h3>Call Us</h3>
+
+            <a href="tel:+919848846685">
+                +91 9848846685
+            </a>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <i class="fab fa-whatsapp"></i>
+
+            <h3>WhatsApp</h3>
+
+            <a href="https://wa.me/919848846685"
+               target="_blank">
+
+                +91 9848846685
+
+            </a>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <i class="fas fa-envelope"></i>
+
+            <h3>Email</h3>
+
+            <a href="mailto:info@techzentra.in">
+                info@techzentra.in
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        Tech<span>Zentra</span>
+    </div>
+
+    <p>
+        Java • Python • Cyber Security • AWS • Azure • Linux •
+        Networking • DevOps
+    </p>
+
+    <p class="copyright">
+        © 2026 TechZentra. All Rights Reserved.
+    </p>
 
 </footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a href="https://wa.me/919848846685"
+   target="_blank"
+   class="whatsapp-float">
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
